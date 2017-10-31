@@ -1,0 +1,33 @@
+{
+  "name": "npm-test-p2",
+  "version": "0.1.0",
+  "author": "fusheng.sfs",
+  "description": "npm 测试项目",
+  "keywords": [
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qingyangmoke/npm-test.git"
+  },
+  "workspaces": [
+    "src/*"
+  ], 
+  "files": [
+    "dist",
+    "src",
+    "demo",
+    "tests"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --devtool source-map --inline --hot --open --host 0.0.0.0",
+    "build": "webpack --progress --colors",
+    "postversion": "git push && git push --tags",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "~0.15.0"
+  }
+}
